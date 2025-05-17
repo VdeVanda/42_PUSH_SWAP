@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:49:07 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/17 11:41:40 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/05/17 12:55:35 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ t_node	*find_max(t_node *stack)
  * Checks if the string is empty after trimming.
  * If it is empty, it deletes the list and frees the strings.
  * It also checks for invalid characters.
- * If any invalid characters are found, it deletes the list and frees the strings.
+ * If any invalid characters are found,
+ * it deletes the list and frees the strings.
  * If the string is valid, it continues to check for empty strings.
  * If any empty strings are found, it deletes the list and frees the strings.
  * Finally, it checks if the number is within the limits of an integer.
