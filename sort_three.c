@@ -6,11 +6,38 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:55:25 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/17 12:28:38 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/05/24 16:00:25 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/**
+ * Checks if the stack is sorted.
+ * It iterates through the stack
+ * and compares each node's data with the next node's data.
+ * If any node's data is greater than the next node's data,
+ * it returns false.
+ * If the stack is empty or has only one node,
+ * it returns true.
+ * The function does not modify the stack.
+ * It assumes that the stack is not NULL.
+ * If the stack is NULL,
+ * it returns true.
+ * The function does not return any value.
+ */
+bool	is_sorted(t_node *stack)
+{
+	if (!stack || !stack->next)
+		return (true);
+	while (stack->next)
+	{
+		if (stack->data > stack->next->data)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
+}
 
 /**
  * Sorts three elements in stack A.

@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 11:15:40 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/17 12:12:17 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/05/24 16:03:40 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,17 @@ t_node	*create_empty_stack(void)
 
 	stackb = NULL;
 	return (stackb);
+}
+
+/**
+ * Writes an error message to the standard error output.
+ * It prints "Error\n" and exits the program with a status of 1.
+ * The function does not return any value.
+ */
+void	write_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 /**

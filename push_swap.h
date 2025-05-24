@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:52:54 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/17 12:19:46 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/05/24 16:10:38 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,22 @@ typedef struct s_node
 	struct s_node	*prev;
 }					t_node;
 
-// General Functions Utils
-void				free_double_array(char *array[]);
-void				print_double_array(char *array[]);
+// Main functions
 void				write_error(void);
-int					ft_safe_atoi(t_node *head, char **all_str, char *str);
 
-// List Functions
-int					add_to_list(t_node **head, int value);
-void				deletlist(t_node *head);
-void				print_stack(t_node *stack);
-bool				is_sorted(t_node *stack);
-int					stacklen(t_node *head);
+// Find stuff
 t_node				*find_min(t_node *stack);
 t_node				*find_max(t_node *stack);
+int					ft_safe_atoi(t_node *head, char **all_str, char *str);
+
+// List functions
+int					add_to_list(t_node **head, int value);
+void				deletlist(t_node *head);
+int					stacklen(t_node *head);
+void				free_double_array(char *array[]);
 
 // Sort
+bool				is_sorted(t_node *stack);
 void				sort_three(t_node **stack_a);
 void				sort_stacks(t_node **stack_a, t_node **stack_b);
 

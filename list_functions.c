@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:50:47 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/17 12:09:47 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/05/24 16:09:58 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,28 @@ int	stacklen(t_node *head)
 		head = head->next;
 	}
 	return (count);
+}
+
+/**
+ * Frees a double array of strings.
+ * It iterates through the array
+ * and frees each string.
+ * It then frees the array itself.
+ * If the array is NULL, it does nothing.
+ * The function does not return any value.
+ */
+void	free_double_array(char *array[])
+{
+	int	i;
+
+	if (array == NULL)
+		return ;
+	i = 0;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		array[i] = NULL;
+		i++;
+	}
+	free(array);
 }

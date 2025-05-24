@@ -2,8 +2,7 @@ NAME = push_swap
 
 SRCS = find_stuff.c init_nodes_a.c list_functions.c \
 		main.c move_nodes.c push.c reverse_rotate.c \
-		rotate.c sort_three.c swap.c syntax_checking.c \
-		utils.c
+		rotate.c sort_three.c swap.c syntax_checking.c
 
 OBJS = $(SRCS:.c=.o)
 
