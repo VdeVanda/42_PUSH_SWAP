@@ -6,14 +6,14 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:52:54 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/24 16:10:38 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/05/28 16:24:57 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "../libft/libft.h"
-# include "stdbool.h"
+# include <stdbool.h>
 # include <limits.h>
 
 typedef struct s_node

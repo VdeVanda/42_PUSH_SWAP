@@ -2,7 +2,7 @@ NAME = push_swap
 
 SRCS = find_stuff.c init_nodes_a.c list_functions.c \
 		main.c move_nodes.c push.c reverse_rotate.c \
-		rotate.c sort_three.c swap.c syntax_checking.c
+		rotate.c sort.c swap.c syntax_checking.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -21,7 +21,10 @@ $(NAME): $(OBJS)
 	@$(MAKE) --no-print-directory -s -C $(LIBFT_DIR) > /dev/null 2>&1
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 	@echo "PUSH SWAP is ready!!"
-	@echo "Usage: ./push_swap \"set of numbers to sort\""
+	@echo "Usage: ./push_swap \"numbers to sort\""
+	@echo "TO COUNT: ./push_swap \"numbers to sort\" | wc -l"
+	@echo "TO CHECK: ./push_swap \"numbers to sort\" | ./checker_linux \"numbers to sort\""
+	@echo 'BOTH: ARG="numbers to sort"; ./push_swap $$ARG | wc -l; ./push_swap $$ARG |./checker_linux $$ARG'
 
 .c.o:
 	@$(CC) $(CFLAGS) -c -o $@ $< $(INCLUDES)
