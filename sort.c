@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:55:25 by vabatist          #+#    #+#             */
-/*   Updated: 2025/06/04 12:45:35 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/06/04 14:29:37 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,13 @@ static void	move_b_to_a(t_node **stack_a, t_node **stack_b)
 }
 
 /**
- * Moves the minimum node to the top of stack A.
- * It finds the minimum node in stack A
+ * Finds the minimum node in stack A
  * and rotates the stack accordingly.
  * If the minimum node is above the median,
+ * it rotates the stack
+ * If the minimum node is below the median,
  * it reverse rotates the stack
- Fiquei aqui * If the minimum node is below the median,
- * it rotates the stack in the reverse direction.
+ * until the minimum node is on top.
  */
 static void	min_on_top(t_node **stack_a)
 {
