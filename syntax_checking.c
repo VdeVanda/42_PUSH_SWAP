@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:56:10 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/17 12:31:05 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:27:48 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,6 @@
  * If the string is not a valid integer,
  * it returns -1.
  * Otherwise, it returns 0.
- * The function does not modify the string.
- * It assumes that the string is null-terminated.
- * The function does not check for overflow or underflow.
- * It only checks for valid characters.
- * If the string is empty,
- * it returns -1.
- * If the string contains only whitespace,
- * it returns -1.
- * If the string contains only '+' or '-',
- * it returns -1.
- * If the string contains only digits,
- * it returns 0.
- * If the string contains a mix of digits and other characters,
- * it returns -1.
- * If the string contains a mix of '+' or '-' and digits,
- * it returns -1.
- * If the string contains a mix of '+' or '-' and other characters,
- * it returns -1.
- * If the string contains a mix of digits and other characters,
- * it returns -1.
- * If the string contains a mix of digits and whitespace,
- * it returns -1.
- * If the string contains a mix of '+' or '-' and whitespace,
- * it returns -1.
- * If the string contains a mix of digits and '+' or '-',
- * it returns -1.
- * If the string contains a mix of digits and whitespace,
- * it returns -1.
  */
 static int	is_digit_str(char *str)
 {
@@ -75,13 +47,6 @@ static int	is_digit_str(char *str)
  * and compares each node's data with the given number.
  * If a duplicate is found, it returns -1.
  * Otherwise, it returns 0.
- * The function does not modify the list.
- * It assumes that the list is not empty.
- * If the list is empty, it returns 0.
- * If the list contains only one node,
- * it returns 0 if the number is not equal to the node's data.
- * If the list contains multiple nodes,
- * it returns 0 if the number is not equal to any of the nodes' data.
  */
 static int	check_duplicate(t_node *head, int num)
 {
@@ -106,10 +71,6 @@ static int	check_duplicate(t_node *head, int num)
  * it returns -1.
  * Otherwise, it adds the number to the list
  * and returns 0.
- * The function does not modify the string.
- * It assumes that the string is null-terminated.
- * The function does not check for overflow or underflow.
- * It only checks for valid characters.
  */
 static int	process_number(char **all_str, char *str, t_node **head)
 {
@@ -134,10 +95,6 @@ static int	process_number(char **all_str, char *str, t_node **head)
  * If any of the strings fail to process,
  * it returns -1.
  * Otherwise, it returns 0.
- * The function does not modify the array.
- * It assumes that the array is null-terminated.
- * The function does not check for overflow or underflow.
- * It only checks for valid characters.
  */
 static int	process_split_array(char **split_argv, t_node **head)
 {
@@ -162,10 +119,6 @@ static int	process_split_array(char **split_argv, t_node **head)
  * It processes each string using process_split_array.
  * If any of the strings fail to process,
  * it deletes the list and writes an error message.
- * The function does not modify the arguments.
- * It assumes that the arguments are null-terminated.
- * The function does not check for overflow or underflow.
- * It only checks for valid characters.
  */
 void	argv_convert_builder(int argc, char *argv[], t_node **head)
 {

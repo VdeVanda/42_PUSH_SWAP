@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 11:15:40 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/24 16:03:40 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/06/04 11:21:53 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ t_node	*create_empty_stack(void)
 
 /**
  * Writes an error message to the standard error output.
- * It prints "Error\n" and exits the program with a status of 1.
+ * It prints "Error\n" and exits the program with a status of 1,
+ * indicating that an error has occurred.
  * The function does not return any value.
  */
 void	write_error(void)
@@ -65,6 +66,10 @@ void	write_error(void)
  * It checks if the stacks are sorted.
  * If stack_a is not sorted,
  * it sorts the stacks using the appropriate sorting algorithm.
+ * If stack_a has 2 elements, it swaps them.
+ * If stack_a has 3 elements, it sorts them using the sort_three function.
+ * If stack_a has more than 3 elements, 
+ * it sorts them using the sort_stacks function.
  * It deletes the stacks after sorting.
  * It returns 0 on success and 1 on failure.
  */

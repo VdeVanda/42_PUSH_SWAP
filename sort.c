@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:55:25 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/24 16:00:25 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:45:35 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@
  * it returns false.
  * If the stack is empty or has only one node,
  * it returns true.
- * The function does not modify the stack.
- * It assumes that the stack is not NULL.
  * If the stack is NULL,
  * it returns true.
- * The function does not return any value.
  */
 bool	is_sorted(t_node *stack)
 {
@@ -43,12 +40,15 @@ bool	is_sorted(t_node *stack)
  * Sorts three elements in stack A.
  * It finds the biggest number in the stack
  * and rotates the stack accordingly.
- * If the biggest number is already on top,
- * it rotates the stack to the right.
+ * If the biggest number is on top,
+ * it rotates the stack.
  * If the biggest number is in the middle,
- * it rotates the stack to the left.
- * Finally, it swaps the first two elements
- * if they are not in order.
+ * it reverse rotates the stack.
+ * If the biggest number is at the bottom,
+ * it does nothing.
+ * It then checks if the first two elements
+ * are in order, and if not,
+ * it swaps them.
  */
 void	sort_three(t_node **stack_a)
 {
@@ -64,14 +64,9 @@ void	sort_three(t_node **stack_a)
 }
 
 /**
- * Moves the cheapest node from stack A to stack B.
- * It first finds the cheapest node in stack A
- * and its target node in stack B.
- * It then determines the best way to move
- * the cheapest node to the top of stack A
- * and the target node to the top of stack B.
- * Finally, it pushes the cheapest node
- * from stack A to stack B.
+ * Prepares for pushing a node from stack B to stack A.
+ * It sets the target node for the push operation
+ * Moves the top element of stack A to stack B.
  */
 static void	move_b_to_a(t_node **stack_a, t_node **stack_b)
 {
@@ -84,8 +79,8 @@ static void	move_b_to_a(t_node **stack_a, t_node **stack_b)
  * It finds the minimum node in stack A
  * and rotates the stack accordingly.
  * If the minimum node is above the median,
- * it rotates the stack in the forward direction.
- * If the minimum node is below the median,
+ * it reverse rotates the stack
+ Fiquei aqui * If the minimum node is below the median,
  * it rotates the stack in the reverse direction.
  */
 static void	min_on_top(t_node **stack_a)

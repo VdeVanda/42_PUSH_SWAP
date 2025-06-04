@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:50:47 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/24 16:09:58 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:31:26 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
  * until it finds the last node (the one with next == NULL).
  * If the stack is empty, it returns NULL.
  * If the stack is not empty, it returns the last node.
- * The function does not modify the stack.
  */
 static t_node	*find_last(t_node *stack)
 {
@@ -38,8 +37,7 @@ static t_node	*find_last(t_node *stack)
  * If the stack is not empty,
  * it finds the last node and sets its next pointer to the new node.
  * It also sets the new node's prev pointer to the last node.
- * The function does not modify the value of the new node.
- * The function does not modify the stack.
+ * Returns 0 on success, or -1 if memory allocation fails.
  */
 int	add_to_list(t_node **head, int value)
 {
