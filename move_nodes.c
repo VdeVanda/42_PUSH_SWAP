@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:51:37 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/17 12:19:11 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/06/04 16:46:04 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,11 +110,11 @@ static void	set_target_b(t_node *stack_a, t_node *stack_b)
 {
 	t_node	*current_a;
 	t_node	*target_node;
-	int		best_match_index;
+	long	best_match_index;
 
 	while (stack_b)
 	{
-		best_match_index = INT_MAX;
+		best_match_index = 2147483648;
 		current_a = stack_a;
 		while (current_a)
 		{
@@ -126,7 +126,7 @@ static void	set_target_b(t_node *stack_a, t_node *stack_b)
 			}
 			current_a = current_a->next;
 		}
-		if (best_match_index == INT_MAX)
+		if ((long)best_match_index == 2147483648)
 			stack_b->target_node = find_min(stack_a);
 		else
 			stack_b->target_node = target_node;

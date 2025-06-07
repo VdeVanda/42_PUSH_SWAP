@@ -6,7 +6,7 @@
 /*   By: vabatist <vabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:49:46 by vabatist          #+#    #+#             */
-/*   Updated: 2025/05/17 11:47:54 by vabatist         ###   ########.fr       */
+/*   Updated: 2025/06/04 16:57:08 by vabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,17 @@ void	current_index(t_node *stack)
 }
 
 /**
- *
- */
+* Sets the target node in stack_b for each node in stack_a.
+ * For each element in stack_a, this function identifies the optimal
+ * placement position in stack_b:
+ * 1. It looks for the largest element in stack_b that is smaller than
+ *    the current stack_a element (finds the correct sorted position)
+ * 2. If no smaller element exists in stack_b (when best_match_index
+ *    remains INT_MIN), it targets the maximum value in stack_b instead
+ * This targeting strategy ensures elements are inserted in the most
+ * efficient position to maintain sorting order in stack_b, minimizing
+ * the number of operations needed.
+*/
 static void	set_target_a(t_node *stack_a, t_node *stack_b)
 {
 	t_node	*current_b;
@@ -98,13 +107,8 @@ static void	set_target_a(t_node *stack_a, t_node *stack_b)
  * has already been set to the appropriate target node in stack_b.
  * The function does not return any value.
  * It modifies the push_cost property of each node in stack_a.
- * The function does not modify the target_node property.
- * The function does not modify the above_median property.
- * The function does not modify the index property.
- * The function does not modify the data property.
- * The function does not modify the next or prev pointers of the nodes.
- * The function does not modify the stack_a or stack_b pointers.
  */
+
 static void	cost_analysis_a(t_node *stack_a, t_node *stack_b)
 {
 	int	len_a;
@@ -134,15 +138,7 @@ static void	cost_analysis_a(t_node *stack_a, t_node *stack_b)
  * If the stack is empty, the function does nothing.
  * The function assumes that the push_cost property of each node
  * has already been set.
- * The function does not modify the target_node property.
- * The function does not modify the above_median property.
- * The function does not modify the index property.
- * The function does not modify the data property.
- * The function does not modify the next or prev pointers of the nodes.
- * The function does not modify the stack pointer.
- * The function does not return any value.
  * The function modifies the cheapest property of the node.
- * The function does not modify the push_cost property.
  */
 void	set_cheapest(t_node *stack)
 {
@@ -177,15 +173,6 @@ void	set_cheapest(t_node *stack)
  * based on the push cost.
  * The function does not return any value.
  * It modifies the properties of the nodes in both stacks.
- * The function does not modify the data property.
- * The function does not modify the next or prev pointers of the nodes.
- * The function does not modify the stack_a or stack_b pointers.
- * The function does not modify the target_node property.
- * The function does not modify the above_median property.
- * The function does not modify the index property.
- * The function does not modify the push_cost property.
- * The function does not modify the cheapest property.
- * The function does not modify the stack pointer. and so on.
  */
 void	init_nodes_a(t_node *stack_a, t_node *stack_b)
 {
